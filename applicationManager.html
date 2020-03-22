@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application Manager</title>
+    <link href="css/applicationManager.css" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <div id="container" class="container-fluid">
+        <h1>
+            Submit Your Application
+        </h1><br>
+        <div class="formContainer">
+            <form onsubmit="event.preventDefault();onFormSubmit();">
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="fullName" class="control-label col-sm-2">Name</label>
+                        <input id="fullName" name="fullName" type="text" class="form-control" placeholder="Enter your full name." required>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="email" class="control-label col-sm-2">Email</label>
+                        <input id="email" name="email" type="text" class="form-control" placeholder="Email" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="password" class="control-label col-sm-2">Password</label>
+                        <input id="password" name="password" type="password" class="form-control" placeholder="Password" required>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="age" class="control-label col-sm-2">Age</label>
+                        <input id="age" name="age" type="number" class="form-control" placeholder="Age" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="phoneNumber" class="control-label col-sm-6">Phone Number<br>
+                            <small>Please, enter a valid number.</small>
+                        </label>
+                        <input id="phoneNumber" name="number" type="text" class="form-control" placeholder="e.g +359 888 888888" required>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <p class="control-label col-sm-6">Preffered way of communication:
+                            <br>
+                            <small>How would you like us to get in touch with you?</small>
+                        </p>
+                        <input type="radio" id="email1" name="contact" value="Email" onclick="radioButtonsReadContact();" required>
+                        <label for="email1" class="control-label col-sm-2">Email</label><br>
+                        <input type="radio" id="phone1" name="contact" value="Phone" onclick="radioButtonsReadContact();" required>
+                        <label for="phone1" class="control-label col-sm-2">Phone</label><br><br>
+                    </div>
+                </div>
+                <div class="form-row ">
+                    <div class="form-group col-md-6">
+                        <p class="control-label col-lg-6">Available to Start
+                            <br>
+                            <small>Enter the date when you will be able to start.</small>
+                        </p>
+                        <input type="date" id="date" name="date" value="date" class="form-control" required>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <p class="control-label col-sm-4">English Level<br>
+                            <small>Be honest.</small></p>
+                        <input type="radio" id=a2 name="level" value="A2" onclick="radioButtonsReadLevel();" required>
+                        <label for="a2" class="control-label">A2</label><br>
+                        <input type="radio" id="b1" name="level" value="B1" onclick="radioButtonsReadLevel();" required>
+                        <label for="b1" class="control-label">B1</label><br>
+                        <input type="radio" id="b2" name="level" value="B2" onclick="radioButtonsReadLevel();" required>
+                        <label for="b2" class="control-label">B2</label><br>
+                        <input type="radio" id="c1" name="level" value="C1" onclick="radioButtonsReadLevel();" required>
+                        <label for="c1" class="control-label">C1</label><br>
+                        <input type="radio" id="c2" name="level" value="C2" onclick="radioButtonsReadLevel();" required>
+                        <label for="c2" class="control-label">C2</label><br>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-6">
+                        <p>Technical Skills and Courses </p>
+                        <textarea type="text" id="infoSkills" name="infoSkills" rows="5" class="form-control" placeholder="Specify any additional courses you have passes if any."></textarea>
+                    </div>
+                    <div class="col-md-6">
+                        <p>Short Personal Presentation </p>
+                        <textarea type="text" id="infoPersonal" name="infoPersonal" rows="5" class="form-control" placeholder="(e.g. reason for joining the program)"></textarea>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group form-check">
+                        <input type="checkbox" class="form-check-input " id="fromHome" name="fromHome" value="checked">
+                        <label for="fromHome">Study from home</label>
+                    </div>
+                </div>
+                <div class="form-action-buttons">
+                    <button type="submit" class="btn btn-success" id="submit">Submit</button>
+                </div>
+            </form><br>
+        </div>
+
+        <div class="resultsContainer">
+            <h1>
+                Applications List
+            </h1><br>
+            <table id="results" class="table-dark table-hover">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Age</th>
+                        <th>Phone Number</th>
+                        <th>Preferred Way of Communication</th>
+                        <th>English Level</th>
+                        <th>Available to Start</th>
+                        <th>Technical Skills and Courses</th>
+                        <th>Short Personal Presentation</th>
+                        <th>Study from Home</th>
+                        <th></th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <!--RESULTS LIST-->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
